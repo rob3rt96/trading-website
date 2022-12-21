@@ -1,0 +1,244 @@
+/* Universal Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* === Custom Properties === */
+
+:root {
+    font-size: 62.5%;                                       /* This makes 1rem equivalent to 10px*/
+
+    --ff-primary: 'Roboto', sans-serif;                     
+    --ff-secondary: 'Montserrat', sans-serif;               /* ff stands for "font family" */
+  
+    --fw-logo: 700;
+    --fw-regular: 400;                                      /* fw stands for "font weight" */
+    --fw-bold: 500;
+  
+    --clr-white: hsl(0, 0%, 100%);
+    --clr-gray1: hsl(0, 0%, 20%);
+    --clr-gray2: hsl(0, 0%, 31%);
+    --clr-gray3: hsl(0, 0%, 51%);
+    --clr-accent: hsl(233, 90%, 64%);
+    --clr-accent2: hsla(249, 100%, 64%, 0.1);
+  
+    --fs-h1: 6.4rem;                                          /* fs stands for "font size" */
+    --fs-h2: 5.6rem;
+    --fs-h4: 2.4rem;
+    --fs-h5: 1.8rem;
+    --fs-h6: 1.5rem;
+    --fs-body: 1.6rem;
+}
+
+@media only screen and (max-width: 768px) {
+    section {
+        padding: 13rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    :root {
+      --fs-h1: 4rem;
+      --fs-h2: 4rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+
+
+/* === General Styles === */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--clr-white);
+    color: var(--clr-gray2);
+    margin: 0;
+    padding: 0;
+    font-family: var(--ff-secondary);
+    font-size: var(--fs-body);
+    line-height: 3rem;
+}
+
+section {
+    padding: 12rem;
+}
+
+
+
+/* === Typography === */
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+    font-family: var(--ff-primary);
+    color: var(--clr-gray1);
+    margin: 0;
+}
+
+h1 {    
+    font-size: var(--fs-h1);
+    line-height: 7.2rem;
+}
+
+h2 {    
+    font-size: var(--fs-h2);
+    line-height: 6.6rem;
+}
+
+h4 {    
+    font-size: var(--fs-h4);
+    line-height: 2.9rem;
+}
+
+h5 {    
+    font-size: var(--fs-h5);
+}
+
+h6 {    
+    font-size: var(--fs-h6);
+    line-height: 1.6rem;
+}
+
+.logo {
+    color: var(--clr-gray1);
+    font-weight: var(--fw-logo);
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: var(--clr-gray1);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+/* ==== Nav bar ==== */
+
+.top_header {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    min-height: 8rem;
+}
+
+header .top_logo_container {
+    position: absolute;
+    top: 3.2rem;
+    left: 12rem;
+}
+
+header .nav_desktop {
+    position: absolute;
+    top: 3.2rem;
+    left: 22.2rem;
+}
+
+header .nav_desktop_list {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3.2rem;
+    padding: 0;
+    margin: 0;
+}
+
+header .nav_item {
+    flex: 0 0 auto;
+}
+
+header .nav_link {
+    color: var(--clr-gray1);
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+}
+
+header .nav_link:hover {
+    color: var(--clr-gray1);
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: var(--fw-bold);
+}
+
+header .nav_mobile {
+    display: none;
+}
+
+header .desktop_language {
+    position: absolute;
+    top:  2rem;
+    right: 25.1rem;
+    height: 4rem;
+    width: 8rem;
+    padding: 1rem 1.6rem;
+    margin: 0;
+    border: 1px solid #000000;
+    border-radius: 6rem;
+}
+
+header .language_list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 4.8rem;
+    height: 2rem;
+}
+
+header .language_list .language_item {
+    flex: 0 0 auto;
+    font-size: var(--fs-h6);
+}
+
+header #downwards_arrow {
+    align-self: center;
+    cursor: pointer;
+}
+
+header .button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 6.4rem;
+    gap: 1rem;
+    max-width: 25.7rem;
+    height: 5.4rem;
+    background-color: var(--clr-accent);
+    border-radius: 6rem;
+}
+
+header .sign-in-button {
+    position: absolute;
+    top: 2rem;
+    right: 6rem;
+    width: 16.7rem;
+    height: 4rem;
+    padding: 1.3rem 2.4rem;
+}
+
+header .sign-in-button span {
+    display: inline-block;
+    width: 100%;
+    height: 1.4rem;
+    color: var(--clr-white);
+    font-size: 1.4rem;
+}
+
