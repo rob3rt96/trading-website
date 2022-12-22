@@ -22,6 +22,7 @@
     --clr-gray1: hsl(0, 0%, 20%);
     --clr-gray2: hsl(0, 0%, 31%);
     --clr-gray3: hsl(0, 0%, 51%);
+    --clr-gray5: hsl(0, 0%, 88%);
     --clr-accent: hsl(233, 90%, 64%);
     --clr-accent2: hsla(249, 100%, 64%, 0.1);
   
@@ -457,7 +458,151 @@ main {
 }
 
 
+/* Quotes section */
 
+.quotes {
+    padding: 14rem 12rem;
+}
+
+.quotes header {
+    width: 48.3rem;
+    height: 13.2rem;
+}
+
+.quotes header .highlight {
+    background-color: var(--clr-accent2);
+}
+
+.quotes .arrow_container {
+    width: 4.8rem;
+    height: 4.8rem;
+    border: 1px solid var(--clr-gray5);
+    border-radius: 100%;
+    cursor: pointer;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.quotes .arrow_container span {
+    width: 1.2rem;
+    padding: 0;
+    line-height: 1.2rem;
+}
+
+.quotes .arrow_container span svg {
+    width: 100%;
+}
+
+.quotes .right_arrow {
+    border-color: var(--clr-accent);
+}
+
+/* Quote container */
+
+.quote_container {
+    display: inline-block;
+    width: 75.3rem;
+    height: 25.5rem;
+}
+
+.quote_author {
+    width: 58.5rem;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    top: 205.7rem;
+    right: 12rem;
+}
+
+.quote_author .qoute_author_picture {
+    width: 7.3rem;
+    height: 7.3rem;
+    margin-right: 3rem;
+}
+
+.quote_author .qoute_author_picture img {
+    width: 100%;
+    border-radius: 100%;
+}
+
+.quote_author_details {
+    width: 48.2rem;
+    height: 5.7rem;
+}
+
+.quote_author_details .quote_author_name {
+    width: 100%;
+    font-weight: var(--fw-bold);
+}
+
+.quote_author_details .quote_author_position {
+    margin: 0;
+    /* height: 2.7rem; */
+    line-height: 2.7rem;
+}
+
+.quote_sign {
+    display: inline-block;
+    position: absolute;
+    top: 214.7rem;
+    right: 72rem;
+    width: 3.5rem;
+    height: 3rem;
+}
+
+.quote_sign span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.quote_text {
+    width: 58.5rem;
+    min-height: 11.6rem;
+    position: absolute;
+    top: 214.7rem;
+    right: 12rem;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-bold);
+    color: var(--clr-gray1);
+    line-height: 2.9rem;
+}
+
+.quote_text p {
+    margin: 0;
+    width: 100%;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-h4);
+    font-weight: var(--fw-bold);
+    color: var(--clr-gray1);
+    line-height: 2.9rem;
+}
+
+.quote_number {
+    width: 7.2rem;
+    position: absolute;
+    top: 229.4rem;
+    right: 63.3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: var(--ff-primary);
+}
+
+.quote_number .selected_quote_number,
+.quote_number #number_separator,
+.quote_number .total_quotes_number {
+    /* width: 100%; */
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h6);
+    color: var(--clr-accent);
+    line-height: 1.8rem;
+}
 
 /* ==== Footer content ==== */
 .footer_container {
