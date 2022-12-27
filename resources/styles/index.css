@@ -60,6 +60,7 @@ html {
 }
 
 body {
+    width: 100%;
     background: var(--clr-white);
     color: var(--clr-gray2);
     margin: 0;
@@ -150,6 +151,7 @@ h6 {
 h1 {    
     font-size: var(--fs-h1);
     line-height: 7.2rem;
+    font-weight: var(--fw-bold);
 }
 
 h2 {    
@@ -176,6 +178,7 @@ h6 {
     color: var(--clr-gray1);
     font-weight: var(--fw-logo);
     text-decoration: none;
+    font-family: var(--ff-primary);
 }
 
 .logo:hover {
@@ -189,23 +192,23 @@ h6 {
 /* ==== Nav bar ==== */
 
 .top_header {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    min-height: 8rem;
+    position: relative;
+    max-width: 100%;
+    height: 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--ff-primary)
 }
 
 header .top_logo_container {
-    position: absolute;
-    top: 3.2rem;
-    left: 12rem;
+    margin-left: 12rem;
+    margin-right: 5.7rem;
 }
 
 header .nav_desktop {
-    position: absolute;
-    top: 3.2rem;
-    left: 22.2rem;
+    margin-right: 31.3rem;
 }
 
 header .nav_desktop_list {
@@ -240,13 +243,10 @@ header .nav_mobile {
 }
 
 header .desktop_language {
-    position: absolute;
-    top:  2rem;
-    right: 25.1rem;
     height: 4rem;
     width: 8rem;
     padding: 1rem 1.6rem;
-    margin: 0;
+    margin-right: 2.4rem;
     border: 1px solid #000000;
     border-radius: 6rem;
 }
@@ -275,12 +275,10 @@ header #downwards_arrow {
 }
 
 header .sign-in-button {
-    position: absolute;
-    top: 2rem;
-    right: 6rem;
     width: 16.7rem;
     height: 4rem;
     padding: 1.1rem 1.8rem;
+    margin-right: 6rem;
 }
 
 header .sign-in-button span {
@@ -295,17 +293,16 @@ header .sign-in-button span {
 
 .nav-toggle {
     display: none;
+    position: relative;
     width: 2.4rem;
     height: 2.4rem;
+    margin-right: 4rem;
+    margin-left: 4.8rem;
     background-color: transparent;
     border: 0;
     cursor: pointer;
-    position: absolute;
-    right: 4rem;
-    top: 2.8rem;
     z-index: 100;
     padding: 0;
-    margin: 0;
 }
 
 .hamburger {
@@ -339,11 +336,35 @@ header .sign-in-button span {
 }
 
 
+@media only screen and (max-width: 1440px) {
+    .top_header {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .top_header {
+        justify-content: flex-end;
+    }
+
+    .top_logo_container, .nav_desktop, .desktop_language {
+        display: none;
+    }
+
+    header .sign-in-button {
+        margin-right: 0;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
 /* ==== Main content ==== */
 
 main {
     position: relative;
-    top: 8rem;
+    /* top: 8rem; */
     width: 100%;
 }
 
@@ -355,18 +376,20 @@ main {
     background-color: var(--clr-accent2);
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .hero .intro {
-    display: inline-block;
-    position: absolute;
-    top: 13.9rem;
-    left: 12rem;
-    width: 58.5rem;
+    margin-left: 12rem;
+    margin-right: 13.3rem;
 }
 
 .hero .intro .intro_title {
-    width: 100%;
+    width: 58.5rem;
+    height: 14.4rem;
 }
 
 .hero .intro aside {
@@ -382,18 +405,58 @@ main {
 }
 
 .hero .chart {
-    display: inline-block;
-    position: absolute;
-    top: 10rem;
-    right: 12rem;
     max-width: 48.2rem;
     height: 51.9rem;
+    margin-right: 12rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .hero {
+        padding: 1.4rem 1.4rem 0 1.4rem;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .hero .intro {
+        margin: 0;
+        margin-bottom: 3.2rem;
+    }
+
+    .hero .intro .intro_title {
+        width: 68.8rem;
+        text-align: center;
+    }
+
+    .hero .intro aside {
+        width: 50.8rem;
+        margin: 0 auto;
+        margin-top: 3.2rem;
+        margin-bottom: 4.8rem;
+        font-weight: var(--fw-regular);
+        font-size: var(--fs-h5);
+    }
+
+    .hero .intro .intro_additional_info {
+        text-align: center;
+        font-weight: var(--fw-regular);
+        font-size: var(--fs-h5);
+    }
+
+    .hero .intro_button {
+        margin: 0 auto;
+    }
+
+    .hero .chart {
+        margin: 0;
+        margin-bottom: 2.4rem;
+    }
 }
 
 /* Instructions section */
 
 .instructions {
-    padding: 14rem 22.2rem 0 12rem;
+    padding: 14rem 22.2rem 3rem 12rem;
 }
 
 .instructions header {
@@ -418,15 +481,40 @@ main {
     align-items: center;
 }
 
-.instruction_item {       
+.instruction_item {  
     margin-bottom: -3rem;
-}
+} 
 
 .instruction_body {
+    position: relative;
     max-width: 48.3rem;
     padding: 3.2rem;
     border: 2px solid var(--clr-accent);
     border-radius: 3rem;
+}
+
+.left_trail > .instruction_body::before {
+    content: "";
+    position: absolute;
+    width: 82.5rem;
+    height: 10rem;
+    border-top: 3px dotted var(--clr-accent);
+    border-left: 3px dotted var(--clr-accent);
+    border-top-left-radius: 3rem;
+    top: -10.3rem;
+    left: 25rem;
+}
+
+.right_trail > .instruction_body::after {
+    content: "";
+    position: absolute;
+    width: 82.5rem;
+    height: 10rem;
+    border-top: 3px dotted var(--clr-accent);
+    border-right: 3px dotted var(--clr-accent);
+    border-top-right-radius: 3rem;
+    top: -10.2rem;
+    left: -59.5rem;
 }
 
 .left_item {
@@ -457,43 +545,52 @@ main {
     margin: 0;
 }
 
-/* Instruction trails */
-
-.instructions_trails {
-    position: absolute;
-    top: 100rem;
-    right: 46.3rem;
-    width: 90rem;
-    height: 60rem;
+@media only screen and (max-width: 1440px) {
+    .left_trail > .instruction_body::before {
+        content: "";
+        width: 38rem;
+        top: -10.3rem;
+        left: 23.5rem;
+    }
+    
+    .right_trail > .instruction_body::after {
+        content: "";
+        width: 37rem;
+        top: -10.2rem;
+        left: -13.5rem;
+    }
 }
 
-.instruction_trail_right,
-.instruction_trail_left {
-    height: 13rem;
-}
+@media only screen and (max-width: 768px) {
+    .instructions {
+        padding: 12rem 4rem 3rem 4rem;
+    }
 
+    .instructions header {
+        width: 41.9rem;
+    }
 
-.instruction_trail_right svg,
-.instruction_trail_left svg {
-    width: 90rem;
-}
+    .instruction_item {  
+        margin-bottom: -7rem;
+    }
 
-#trail_1 {
-    position: relative;
-    top: 15rem;
-    left: 6.25rem;
-}
+    .instruction_body {
+        max-width: 32.9rem;
+    }
 
-#trail_2 {
-    position: relative;
-    top: 22.5rem;
-    right: 18.5rem;
-}
-
-#trail_3 {
-    position: relative;
-    top: 29.75rem;
-    left: 6.25rem;
+    .left_trail > .instruction_body::before {
+        content: "";
+        width: 19.5rem;
+        top: -10.3rem;
+        left: 16rem;
+    }
+    
+    .right_trail > .instruction_body::after {
+        content: "";
+        width: 19.5rem;
+        top: -10.2rem;
+        left: -3.2rem;
+    }
 }
 
 
@@ -508,14 +605,14 @@ main {
     flex: 0 0 auto;
 }
 
-.quotes header {
+.quotes .quotes_title {
     width: 48.3rem;
     height: 13.2rem;
     margin-right: 13.2rem;
     align-self: flex-start;
 }
 
-.quotes header .highlight {
+.quotes .quotes_title .highlight {
     background-color: var(--clr-accent2);
 }
 
@@ -526,7 +623,7 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    width: 63.5rem;
+    width: 58.5rem;
     height: 25.5rem;
     position: relative;
 }
@@ -563,12 +660,10 @@ main {
 
 .quote_author_details .quote_author_position {
     margin: 0;
-    /* height: 2.7rem; */
     line-height: 2.7rem;
 }
 
 .quote_sign {
-    /* display: inline-block; */
     position: absolute;
     top: 10.7rem;
     left: -5rem;
@@ -585,9 +680,6 @@ main {
 .quote_text {
     width: 58.5rem;
     min-height: 11.6rem;
-    /* position: absolute; */
-    /* top: 214.7rem; */
-    /* right: 12rem; */
     font-family: var(--ff-primary);
     font-size: var(--fs-h4);
     font-weight: var(--fw-bold);
@@ -607,9 +699,6 @@ main {
 
 .quote_number {
     width: 7.2rem;
-    /* position: absolute; */
-    /* top: 229.4rem; */
-    /* right: 63.3rem; */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -662,11 +751,83 @@ main {
     border-color: var(--clr-accent);
 }
 
+@media only screen and (max-width: 768px) {
+    .quotes {
+        padding: 12rem 4rem 0 4rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 0 0 auto;
+    }
+
+    .quotes .quotes_title {
+        width: 50.9rem;
+        height: 13.2rem;
+        margin-bottom: 4.8rem;
+        margin-right: 0;
+        align-self: flex-start;
+    }
+
+    .quote_container {
+        align-items: center;
+        width: 100%;
+        height: 36.5rem;
+        position: relative;
+    }
+
+    .quote_author {
+        width: 14.9rem;
+        padding: 0;
+        margin-bottom: 1.6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .quote_author .qoute_author_picture {
+        margin-right: 0;
+    }
+
+    .quote_author_details {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+
+    .quote_sign {
+        position: static;
+        width: 3.5rem;
+        height: 3rem;
+        margin-bottom: 1.6rem;
+    }
+
+    .quote_text {
+        width: 50.8rem;
+        text-align: center;
+        margin-bottom: 3.2rem;
+    }
+
+    .left_arrow {
+        position: absolute;
+        top: 15rem;
+        left: 0;
+    }
+    
+    .right_arrow {
+        position: absolute;
+        top: 15rem;
+        left: unset;
+        right: 0;
+    }
+}
+
+
 /* Questions container */
 
 .questions_container {
     position: relative;
-    padding: 14rem 0 14rem 12rem;
+    padding: 14rem 12rem;
     margin: 0;
     min-height: 109.7rem;
 }
@@ -682,7 +843,7 @@ main {
 }
 
 .questions_list_container {
-    margin-left: 30rem;
+    margin: 0 auto;
     padding: 0;
     max-width: 99.5rem;
     min-height: 89.7rem;
@@ -739,6 +900,7 @@ main {
 .question .question_body {
     width: 75rem;
     min-height: 10.8rem;
+    margin-top: 2.4rem;
 }
 
 .question .question_body p {
@@ -747,8 +909,27 @@ main {
     font-weight: var(--fw-regular);
     line-height: 2.7rem;
     color: var(--clr-gray2);
+    margin: 0;
 }
 
+@media only screen and (max-width: 768px) {
+    .questions_container {
+        position: relative;
+        padding: 12rem 4rem;
+        min-height: 109.7rem;
+    }
+
+    .questions_container_title {
+        width: 50.9rem;
+        height: 13.2rem;
+        margin-bottom: 4.8rem;
+    }
+
+    .question .question_body {
+        width: 55.8rem;
+        min-height: 10.8rem;
+    }    
+}
 
 
 /* Contact container */
@@ -849,7 +1030,6 @@ main {
 /* Contact form */
 
 .contact_form {
-    /* display: inline-block; */
     background-color: var(--clr-white);
     max-width: 58.5rem;
     min-height: 47.1rem;
@@ -901,6 +1081,39 @@ main {
     margin: 0 auto;
 }
 
+@media only screen and (max-width: 768px) {
+    .contact_container {
+        width: 100%;
+        min-height: 73.9rem;
+        padding: 4.8rem 13rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--clr-accent2);
+    }
+
+    .contact_description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 50.8rem;
+        min-height: 49.9rem;
+        margin-bottom: 4.8rem;
+    }
+
+    .contact_form {
+        max-width: 50.8rem;
+        min-height: 47.1rem;
+    }
+
+    .contact_form form {
+        padding: 8rem 4.15rem;
+    }
+}
+
+
 
 /* ==== Footer content ==== */
 .footer_container {
@@ -909,7 +1122,6 @@ main {
     justify-content: center;
     width: 100%;
     position: relative;
-    top: 8rem;
     padding: 3.2rem 12rem;
 }
 
@@ -1013,4 +1225,88 @@ main {
     line-height: 2.7rem;
     color: var(--clr-gray3);
     font-weight: var(--fw-regular);
+}
+
+@media only screen and (max-width: 768px) {
+    .footer_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        position: relative;
+        padding: 6.2rem 4rem 4.8rem 4rem;
+    }
+
+    .footer_upperContainer {
+        grid-template-areas:
+            "logo"
+            "nav"
+            "information"
+            "disclaimer";
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: 1fr;
+        gap: 0;
+        width: 100%;
+        align-content: center;
+        align-items: center;
+    }
+
+    .footer_nav_container {
+        margin-bottom: 4rem;
+    }
+
+    .footer_nav_container .footer_nav_list {
+        min-height: 1.6rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .bottom_logo_container {
+        margin-right: unset;
+        justify-self: center;
+    }
+
+    .footer_information_container,
+    .footer_disclaimer_container {
+        margin-right: 0;
+        margin-bottom: 3.2rem;
+    }
+
+    .footer_information_container header,
+    .footer_disclaimer_container header {
+        width: 50.8rem;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 1.6rem;
+    }
+
+    .footer_information_container .footer_information_text,
+    .footer_disclaimer_container .footer_disclaimer_text {
+        width: 50.8rem;
+        margin: 0 auto;
+    }
+
+    .footer_information_container .footer_information_text p,
+    .footer_disclaimer_container .footer_disclaimer_text p {
+        width: 50.8rem;
+        margin: 0 auto;
+    }
+    
+    .footer_copyright_container {
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 0.8rem;
+    }
+    
+    .footer_copyright_container .copyright_list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.6rem;
+    }
+
+    .copyright_list .copyright_item {
+        text-align: center;
+    }
 }
