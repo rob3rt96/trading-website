@@ -360,6 +360,27 @@ header .sign-in-button span {
     }
 }
 
+@media only screen and (max-width: 320px) {
+    .top_header {
+        justify-content: space-between;
+    }
+
+    header .top_logo_container {
+        display: block;
+        margin-left: 2rem;
+        margin-right: unset;
+    }
+
+    header .sign-in-button {
+        display: none;
+    }
+
+    .nav-toggle {
+        margin-left: unset;
+        margin-right: 2rem;
+    }
+}
+
 /* ==== Main content ==== */
 
 main {
@@ -450,6 +471,57 @@ main {
     .hero .chart {
         margin: 0;
         margin-bottom: 2.4rem;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .hero {
+        padding: 3.2rem 2rem 1.6rem 2rem;
+    }
+
+    .hero .intro {
+        margin: 0;
+        margin-bottom: 2.4rem;
+        width: 100%;
+    }
+
+    .hero .intro .intro_title {
+        width: 28rem;
+        font-size: 4rem;
+        line-height: 4.4rem;
+        text-align: left;
+    }
+
+    .hero .intro aside {
+        width: 28rem;
+        margin: 0 auto;
+        margin-top: 2.4rem;
+        margin-bottom: 3.2rem;
+    }
+
+    .hero .intro .intro_additional_info {
+        text-align: left;
+    }
+
+    .hero .intro_button {
+        margin: 0;
+        margin-bottom: 3.2rem;
+        width: 100%;
+    }
+
+    .button {
+        max-width: 28rem;
+    }
+
+    .hero .chart {
+        width: 100%;
+        height: 100%;
+        margin-bottom: unset;
+    }
+
+    .hero .chart svg {
+        width: 100%;
+        height: auto;
     }
 }
 
@@ -591,6 +663,44 @@ main {
         top: -10.2rem;
         left: -3.2rem;
     }
+}
+
+@media only screen and (max-width: 320px) {
+    .instructions {
+        padding: 8rem 2rem 0 2rem;
+    }
+
+    .instructions header {
+        width: 100%;
+        line-height: 4.4rem;
+        margin-bottom: 3.2rem;
+    }
+
+    .instructions header .instructions_title {
+        line-height: 4.4rem;
+        width: 80%;
+    }
+
+    .instructions_list {
+        margin: 0;
+    }
+
+    .instruction_item {  
+        margin-bottom: 2.4rem;
+    }
+
+    .instruction_body {
+        position: relative;
+        width: 100%;
+        padding: 2.4rem;
+    }
+
+    .left_trail > .instruction_body::before,
+    .right_trail > .instruction_body::after {
+        content: "";
+        display: none;
+    }
+
 }
 
 
@@ -822,6 +932,53 @@ main {
     }
 }
 
+@media only screen and (max-width: 320px) {
+    .quotes {
+        padding: 8rem 2rem 0 2rem;
+    }
+
+    .quotes .quotes_title {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 3.2rem;
+        margin-right: 0;
+        align-self: center;
+        line-height: 4.4rem;
+    }
+
+    .quotes .quotes_title h2 {
+        width: 80%;
+        line-height: 4.4rem;
+    }
+
+    .quote_container {
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .quote_text {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2.4rem;
+    }
+
+    .left_arrow {
+        position: absolute;
+        top: unset;
+        bottom: -1.5rem;
+        left: 0;
+    }
+    
+    .right_arrow {
+        position: absolute;
+        top: unset;
+        bottom: -1.5rem;
+        right: 0;
+    }
+}
+
 
 /* Questions container */
 
@@ -929,6 +1086,47 @@ main {
         width: 55.8rem;
         min-height: 10.8rem;
     }    
+}
+
+@media only screen and (max-width: 320px) {
+    .questions_container {
+        padding: 8rem 2rem;
+        min-height: 100%;
+    }
+
+    .questions_container_title {
+        width: 100%;
+        height: 100%;
+        line-height: 4.4rem;
+        margin-bottom: 3.2rem;
+    }
+
+    .questions_container_title h2 {
+        width: 80%;
+        line-height: 4.4rem;
+    }
+
+    .questions_list_container .question {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .question header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 2.7rem;
+    }
+
+    .question header .question_title {
+        width: 18.9rem;
+        font-size: var(--fs-h5);
+        line-height: 2.2rem;
+    }
+
+    .question .question_body {
+        width: 100%;
+        min-height: 100%;
+    } 
 }
 
 
@@ -1113,6 +1311,80 @@ main {
     }
 }
 
+@media only screen and (max-width: 320px) {
+    .contact_container {
+        width: 100%;
+        height: 100%;
+        padding: 4.8rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .contact_description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        height: 100%;
+        margin-bottom: 4.8rem;
+    }
+
+    .contact_header {
+        margin: 0;
+        margin-bottom: 2.4rem;
+        width: 100%;
+        height: 100%;
+        line-height: 4.4rem;
+    }
+
+    .contact_header h2 {
+        line-height: 4.4rem;
+    }
+
+    .contact_intro {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 2.4rem;
+    }
+    
+    .contact_details {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    .contact_details .phone_detail,
+    .contact_details .email_detail,
+    .contact_details .address_detail {
+        width: 100%;
+    }
+
+    .contact_form {
+        max-width: 100%;
+        min-height: 100%;
+    }
+
+    .contact_form form {
+        padding: 4.88rem 1.6rem;
+    }
+
+    .contact_form .contact_form_name,
+    .contact_form .contact_form_email,
+    .contact_form .contact_form_text {
+        width: 100%;    
+    }
+}
+
 
 
 /* ==== Footer content ==== */
@@ -1142,12 +1414,13 @@ main {
 .bottom_logo_container {
     grid-area: logo;
     margin-right: 16rem;
+    font-weight: var(--fw-logo);
 }
 
 .bottom_logo_container .logo {
     font-family: var(--ff-primary);
     font-size: var(--fs-h6);
-    font-weight: var(--fw-bold);
+    font-weight: var(--fw-logo);
     line-height: 1.6rem;
 }
 
@@ -1308,5 +1581,55 @@ main {
 
     .copyright_list .copyright_item {
         text-align: center;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .footer_container {
+        padding: 4.6rem 2rem 3.2rem 2rem;
+    }
+
+    .footer_nav_container .footer_nav_list {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 3.2rem;
+    }
+
+    .bottom_logo_container {
+        margin-bottom: 4.6rem;
+    }
+
+    .footer_information_container,
+    .footer_disclaimer_container {
+        margin-right: 0;
+        margin-bottom: 3.2rem;
+    }
+
+    .footer_information_container,
+    .footer_disclaimer_container,
+    .footer_nav_container {
+        max-width: 28rem;
+    }
+
+    .footer_information_container header,
+    .footer_disclaimer_container header {
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 1.6rem;
+    }
+
+    .footer_information_container .footer_information_text,
+    .footer_disclaimer_container .footer_disclaimer_text {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .footer_information_container .footer_information_text p,
+    .footer_disclaimer_container .footer_disclaimer_text p {
+        width: 100%;
+        margin: 0 auto;
     }
 }
